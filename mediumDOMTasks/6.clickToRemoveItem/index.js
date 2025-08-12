@@ -11,7 +11,7 @@ button.innerText = "Add";
 
 let data = [];
 
-const add = (value) => {
+const addList = (value) => {
   data.push(value);
 };
 
