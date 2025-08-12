@@ -17,17 +17,32 @@ let datas = [
   { name: "Carrot", category: "vegetable" },
 ];
 
-option.addEventListener("change", () => {
-  let filtered = datas.filter((data) => {
-    return data.name;
-  });
-  return filtered;
-
-  //   const filtered = data.filter((arr) => {
-  // if()
-  //   });
+// const filtered = select.value;
+// console.log(filtered, "filtered");
+select.addEventListener("click", () => {
+  if (datas.category === select.value) {
+    return datas.name;
+  }
+  console.log("bye");
 });
-console.log(datas.name);
+
+// function myFunction() {
+//   let filtered = select.value;
+//   filtered = p;
+//   optionVeg.addEventListener("click", () => {
+//     datas.filter((data) => {
+//       return data === filtered;
+//     });
+//   });
+// }
+
+// option.addEventListener("change", () => {
+//   let filtered = datas.filter((data) => {
+//     return data.name;
+//   });
+//   return filtered;
+// });
+// console.log(datas.name);
 
 body.appendChild(p);
 body.appendChild(select);
