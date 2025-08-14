@@ -1,5 +1,3 @@
-const { createElement } = require("react");
-
 const body = document.querySelector("body");
 const p = document.createElement("p");
 const input = document.createElement("input");

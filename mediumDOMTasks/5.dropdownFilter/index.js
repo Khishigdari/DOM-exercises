@@ -4,6 +4,7 @@ const select = document.createElement("select");
 const option = document.createElement("option");
 const optionVeg = document.createElement("option");
 const optionFru = document.createElement("option");
+const ul = document.createElement("ul");
 
 p.innerText = "Dropdown Filter";
 option.innerText = "All";
@@ -17,13 +18,26 @@ let datas = [
   { name: "Carrot", category: "vegetable" },
 ];
 
+// const addList = (value) => {
+//   datas.push(value);
+// };
+
+datas.map(() => {
+  const li = document.createElement("li");
+  ul.appendChild(li);
+  ul.value = datas;
+
+  // li.appendChild(datas)
+});
+
 // const filtered = select.value;
 // console.log(filtered, "filtered");
-select.addEventListener("click", () => {
-  if (datas.category === select.value) {
-    return datas.name;
-  }
-  console.log("bye");
+select.addEventListener("change", () => {
+  datas.filter((data) => {
+    data.category === select.value;
+    return datas;
+  });
+  console.log(datas);
 });
 
 // function myFunction() {
