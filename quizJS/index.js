@@ -130,16 +130,17 @@ const data = [
 
 const body = document.querySelector("body");
 const startBtn = document.querySelector("button");
-let currentIndex = 0;
+let currentIndex = 1;
 let point = 0;
 
 const quizStart = () => {
   startBtn.remove();
   const question = document.createElement("h2");
-  const currentQuestion = document.createElement("p");
+  // const currentQuestion = document.createElement("p");
   body.appendChild(question);
-  currentQuestion.innerText = `${currentIndex}/${data.length}`;
-  body.appendChild(currentQuestion);
+  // currentQuestion.innerText = `${currentIndex} of ${data.length} questions`;
+  // currentQuestion.innerText = `${currentIndex}/${data.length}`;
+  // body.appendChild(currentQuestion);
 
   new Array(4).fill(0).forEach((el, i) => {
     const btn = document.createElement("button");
@@ -147,7 +148,7 @@ const quizStart = () => {
     btn.addEventListener("click", () => {
       if (data[currentIndex].correctAnswer === data[currentIndex].answers[i]) {
         point++;
-        // console.log(point);
+        console.log(point);
       }
       currentIndex++;
       question.innerText = data[currentIndex].question;
@@ -158,6 +159,10 @@ const quizStart = () => {
       currentQuestion.innerText = `${currentIndex}/${data.length}`;
     });
   });
+
+  const currentQuestion = document.createElement("p");
+  currentQuestion.innerText = `${currentIndex} of ${data.length} questions`;
+  body.appendChild(currentQuestion);
 
   const drawQuestion = () => {
     const answerBtns = document.querySelectorAll("button");
